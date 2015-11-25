@@ -2,12 +2,11 @@
 
 # Setting PATH for Python 2.7                                                                                                                                       
 # The orginal version is saved in .bash_profile.pysave                                                                                                            
-PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}
-export PATH
+PATH=$PATH:/Library/Frameworks/Python.framework/Versions/2.7/bin
 
 # Docker
 export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/dmitrizaitsev/.boot2docker/certs/boot2docker-vm
+export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
 
 # Load RVM, if you are using it
@@ -29,9 +28,6 @@ export GIT_EDITOR='emacs -w'
 
 # Set the path nginx
 export NGINX_PATH='/opt/nginx'
-
-# Don't check mail when opening terminal.
-unset MAILCHECK
 
 # Change this to your console based IRC client of choice.
 export IRC_CLIENT='irssi'
@@ -65,8 +61,9 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # MacPorts Installer addition on 2015-11-22_at_13:10:28: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+PATH=$PATH:/opt/local/bin:/opt/local/sbin
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-# Global node modules
-export PATH=~/npm-global/bin:$PATH
+# Move global node modules to local directory
+NPM_PACKAGES=~/npm-global
+export PATH=$PATH:$NPM_PACKAGES/bin
