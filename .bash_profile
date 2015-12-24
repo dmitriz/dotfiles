@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-# Setting PATH for Python 2.7                                                                                                                                       
-# The orginal version is saved in .bash_profile.pysave                                                                                                            
+# Setting PATH for Python 2.7                                                                          
 PATH=$PATH:/Library/Frameworks/Python.framework/Versions/2.7/bin
 
 # Docker
@@ -16,14 +15,18 @@ export DOCKER_TLS_VERIFY=1
 export PATH=$PATH:~/.gem/specs/rubygems.org%80/quick/Marshal.4.8:/opt/nginx/sbin::/usr/local/Cellar/ruby/2.0.0-p195/bin
 
 # Path to the bash it configuration
-#export BASH_IT=$HOME/.bash_it
+export BASH_IT=$HOME/.bash_it
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
-#export BASH_IT_THEME='bobby'
+export BASH_IT_THEME='bobby'
+
+# Your place for hosting Git repos. I use this for private repos.
+export GIT_HOSTING='git@git.domain.com'
 
 # Set my editor and git editor
 #export EDITOR="/usr/bin/mate -w"
+#export GIT_EDITOR='/usr/bin/mate -w'
 export GIT_EDITOR='emacs -w'
 
 # Set the path nginx
@@ -40,10 +43,10 @@ export TODO="t"
 #export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
 
 # Load Bash It
-#source $BASH_IT/bash_it.sh
+source $BASH_IT/bash_it.sh
 
 # Load npm completion - generated with `npm complete > .npm-completion.sh`
-#source ~/.npm-completion.sh
+source ~/.npm-completion.sh
 
 # Shortcut for Ironworker
 r () {
@@ -53,17 +56,19 @@ r () {
 export -f r
 alias s="python -m SimpleHTTPServer 8080"
 alias remoteupdate="git pull --rebase upstream master"
-alias l="ls -lisa"
+alias lisa="ls -lisa"
 
 # Coloring
 # http://apple.stackexchange.com/a/33679/56300
-export CLICOLOR=1
-export LSCOLORS=ExFxCxDxBxegedabagacad
+#export CLICOLOR=1
+#export LSCOLORS=ExFxCxDxBxegedabagacad
 
-# MacPorts Installer addition on 2015-11-22_at_13:10:28: adding an appropriate PATH variable for use with MacPorts.
-PATH=$PATH:/opt/local/bin:/opt/local/sbin
-# Finished adapting your PATH environment variable for use with MacPorts.
+# MacPorts Installer addition on 2015-11-21_at_17:10:36: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
-# Move global node modules to local directory
-NPM_PACKAGES=~/npm-global
-export PATH=$PATH:$NPM_PACKAGES/bin
+# path for node global packages
+export PATH=~/npm-global/bin:$PATH
+
+# path to use local node binaries instead of global
+export PATH=./node_modules/.bin/:$PATH
+
