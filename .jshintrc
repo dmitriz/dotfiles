@@ -1,5 +1,7 @@
 {
   "predef": [
+    "__dirname",
+
     // node
     "module",
     "require",
@@ -39,6 +41,7 @@
   "regexp": false,
   "undef": true,
   "sub": true,
+  //"strict": "global",
   "strict": false,
   "white": false,
   "eqnull": true,
