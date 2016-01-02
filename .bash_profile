@@ -70,5 +70,5 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 export PATH=~/npm-global/bin:$PATH
 
 # path to use local node binaries instead of global
-export PATH=./node_modules/.bin/:$PATH
+export PATH=$PATH:./node_modules/.bin/
 
