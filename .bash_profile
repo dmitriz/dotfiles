@@ -27,7 +27,8 @@ export GIT_HOSTING='git@git.domain.com'
 # Set my editor and git editor
 #export EDITOR="/usr/bin/mate -w"
 #export GIT_EDITOR='/usr/bin/mate -w'
-export GIT_EDITOR='emacs -w'
+#export GIT_EDITOR='emacs -w'
+export GIT_EDITOR='subl -w'
 
 # Set the path nginx
 export NGINX_PATH='/opt/nginx'
@@ -54,9 +55,22 @@ r () {
    iron_worker queue $1
 }
 export -f r
+# Shorcut to start new project
+n () {
+	mkdir $1
+	cd $1
+	git init
+	npm init -y
+}
+
 alias s="python -m SimpleHTTPServer 8080"
 alias remoteupdate="git pull --rebase upstream master"
 alias lisa="ls -lisa"
+alias l="ls -G"
+
+# npm from cache
+alias npmo="npm --cache-min 999999 "
+alias npml="npm --registry http://127.0.0.1:5080 "
 
 # Coloring
 # http://apple.stackexchange.com/a/33679/56300
@@ -70,5 +84,8 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 export PATH=~/npm-global/bin:$PATH
 
 # path to use local node binaries instead of global
-export PATH=$PATH:./node_modules/.bin/
+export PATH=./node_modules/.bin/:$PATH
+
+# Some installers write there, so we source it
+source ~/.bashrc
 
