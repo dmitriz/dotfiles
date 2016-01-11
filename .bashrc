@@ -26,7 +26,7 @@ alias lisa="ls -lisa"
 alias l="ls -G"
 
 # npm from cache
-alias npmo="npm --cache-min 999999 "
+alias npmo="npm --cache-min 999999 -d "
 #alias npml="npm --registry http://127.0.0.1:5080 "
-alias npml="npm --registry http://localhost:8080 "
+alias npml="npm --registry http://localhost:8080 -d "
 alias nl="npm ls --depth=0"
