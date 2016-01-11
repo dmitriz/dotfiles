@@ -1,25 +1,18 @@
 {
   "predef": [
     "__dirname",
-
-    // node
-    "module",
-    "require",
-    "process",
-
-    // testing
-    "jasmine"    ,
-    "spyOn"      ,
-    "it"         ,
-    "describe"   ,
-    "expect"     ,
-    "beforeEach" 
-  ],
-  "globals": [
     "document",
     "window",
     "angular",
-    "-Promise"
+    "module",
+    "require",
+    "process",
+    "jasmine",
+    "spyOn",
+    "it",
+    "describe",
+    "expect",
+    "beforeEach" 
   ],
   "browser": true,
   "boss": true,
@@ -42,6 +35,7 @@
   "undef": true,
   "sub": true,
   //"strict": "global",
+//  "strict": true,
   "strict": false,
   "white": false,
   "eqnull": true,

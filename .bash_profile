@@ -49,29 +49,6 @@ source $BASH_IT/bash_it.sh
 # Load npm completion - generated with `npm complete > .npm-completion.sh`
 source ~/.npm-completion.sh
 
-# Shortcut for Ironworker
-r () {
-   iron_worker upload $1
-   iron_worker queue $1
-}
-export -f r
-# Shorcut to start new project
-n () {
-	mkdir $1
-	cd $1
-	git init
-	npm init -y
-}
-
-alias s="python -m SimpleHTTPServer 8080"
-alias remoteupdate="git pull --rebase upstream master"
-alias lisa="ls -lisa"
-alias l="ls -G"
-
-# npm from cache
-alias npmo="npm --cache-min 999999 "
-alias npml="npm --registry http://127.0.0.1:5080 "
-
 # Coloring
 # http://apple.stackexchange.com/a/33679/56300
 #export CLICOLOR=1
@@ -81,7 +58,7 @@ alias npml="npm --registry http://127.0.0.1:5080 "
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 # path for node global packages
-export PATH=~/npm-global/bin:$PATH
+export PATH=~/.npm-global/bin:$PATH
 
 # path to use local node binaries instead of global
 export PATH=./node_modules/.bin/:$PATH
