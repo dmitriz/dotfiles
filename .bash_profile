@@ -2,13 +2,7 @@
 
 # Some installers write there, so we source it
 #source ~/.bashrc
-for file in ~/.{bashrc}; do
-    [ -r "$file" ] && source "$file"
-done
-unset file
-
-# Old version
-#if [ -f ~/.bashrc ]; then . ~/.bashrc; fi 
+if [ -f ~/.bashrc ]; then . ~/.bashrc; fi 
 
 PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 
