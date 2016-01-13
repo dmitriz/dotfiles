@@ -2,7 +2,15 @@
 
 # Some installers write there, so we source it
 #source ~/.bashrc
-if [ -f ~/.bashrc ]; then . ~/.bashrc; fi 
+for file in ~/.{bashrc}; do
+    [ -r "$file" ] && source "$file"
+done
+unset file
+
+# Old version
+#if [ -f ~/.bashrc ]; then . ~/.bashrc; fi 
+
+PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 
 # Setting PATH for Python 2.7                                                                          
 PATH=$PATH:/Library/Frameworks/Python.framework/Versions/2.7/bin
