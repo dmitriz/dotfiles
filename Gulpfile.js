@@ -9,7 +9,9 @@ var dotFiles = [
 	'.bashrc',
 	'.zshrc',
 	'.gitignore_global',
+	'.gitconfig',
 	'.npmrc',
+	'.npm-init.js',
 	'.jshintrc',
 ];
 
