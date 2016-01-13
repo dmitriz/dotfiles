@@ -13,7 +13,7 @@ r () {
 }
 export -f r
 # Shorcut to start new project
-n () {
+np () {
 	mkdir $1
 	cd $1
 	git init

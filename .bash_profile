@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Some installers write there, so we source it
+#source ~/.bashrc
+if [ -f ~/.bashrc ]; then . ~/.bashrc; fi 
+
 # Setting PATH for Python 2.7                                                                          
 PATH=$PATH:/Library/Frameworks/Python.framework/Versions/2.7/bin
 
@@ -62,7 +66,3 @@ export PATH=~/.npm-global/bin:$PATH
 
 # path to use local node binaries instead of global
 export PATH=./node_modules/.bin/:$PATH
-
-# Some installers write there, so we source it
-source ~/.bashrc
-
