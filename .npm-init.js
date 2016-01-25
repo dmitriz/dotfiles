@@ -19,7 +19,7 @@ var httpServerExample = [
   'var fs = require(\'fs\')\n',
   'var http = require(\'http\')\n',
   '\n',
-  'var PORT = 1337\n',
+  'var PORT = ' + PORT + '\n',
   '\n',
   'http.createServer(function (req, res) {\n',
   '  //  res.writeHead(200, {\'Content-Type\': \'text/plain\'})\n',
@@ -32,23 +32,23 @@ var httpServerExample = [
 ].join('')
 
 // Write a new server.js if one doesn't exist already
-try {  
+try {
   fs.lstatSync(cwd + mainFile)
-} catch(err) {
+} catch (err) {
   fs.writeFileSync(cwd + mainFile, httpServerExample)
 }
 
 // Variables to be exported into `package.json`
-module.exports = {  
+module.exports = {
   version: '0.1.0',
   name: name,
   main: 'server.js',
-  description: "My project",  
-  repository: "https://github.com/dmitriz",
+  description: 'My project',
+  repository: 'https://github.com/dmitriz/' + name,
   scripts: {
     start: 'node server'
   },
-  "keywords": [],
-  "author": "Dmitri Zaitsev <dmitri14@gmail.com> (https://github.com/dmitriz)",
-  "license": "ISC"
+  'keywords': [],
+  'author': 'Dmitri Zaitsev <dmitri14@gmail.com> (https://github.com/dmitriz)',
+  'license': 'ISC'
 }
