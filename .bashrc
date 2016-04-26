@@ -24,10 +24,14 @@ alias s="python -m SimpleHTTPServer 8080"
 alias remoteupdate="git pull --rebase upstream master"
 alias lisa="ls -lisa"
 alias l="ls -G"
+alias e="subl"
 
+alias ns="npm start"
 # npm from cache
 alias npmo="npm --cache-min 999999 -d "
 #alias npml="npm --registry http://127.0.0.1:5080 "
+alias nio="npmo i"
+
 alias npml="npm --registry http://localhost:8080 -d "
 alias nl="npm ls --depth=0"
 alias nr="npm run"

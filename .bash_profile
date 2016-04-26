@@ -15,10 +15,10 @@ export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
 
 # Load RVM, if you are using it
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+#[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 # Add rvm gems and nginx to the path
-export PATH=$PATH:~/.gem/specs/rubygems.org%80/quick/Marshal.4.8:/opt/nginx/sbin::/usr/local/Cellar/ruby/2.0.0-p195/bin
+export PATH=$PATH:$HOME/.rvm/gems/ruby-2.3.0/bin
 
 # Path to the bash it configuration
 export BASH_IT=$HOME/.bash_it
@@ -68,3 +68,6 @@ export PATH=~/.npm-global/bin:$PATH
 
 # path to use local node binaries instead of global
 export PATH=./node_modules/.bin/:$PATH
+
+# path to Postgress DB
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin

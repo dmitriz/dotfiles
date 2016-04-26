@@ -31,30 +31,25 @@ var basicServer = [
   '\n'
 ].join('')
 
-// Write a new server.js if one doesn't exist already
-try {
-  fs.lstatSync(cwd + mainFile)
-} catch (err) {
-  fs.writeFileSync(cwd + mainFile, basicServer)
+// Write a new index.js if one doesnt exist already
+try {  
+    fs.lstatSync(cwd + mainFile)
+} catch(err) {
+    fs.writeFileSync(cwd + mainFile, httpServerExample)
 }
 
-// Variables to be exported into `package.json`
-module.exports = {
-  name: name,
-  version: '0.1.0',
-  main: 'server.js',
-  description: 'My project',
-  license: 'ISC',
-  repository: 'https://github.com/dmitriz/' + name,
-  author: 'Dmitri Zaitsev <dmitri14@gmail.com> (https://github.com/dmitriz)',
-  config: {
-    port: PORT
-  },
-  scripts: {
-    start: 'node server',
-    pub: 'npm version patch && npm publish && git push'
-  },
-  keywords: [
-    name
-  ]
+module.exports = {  
+    version: '0.1.0',
+    name: name,
+    main: 'index.js',
+    description: "Test project",  
+    repository: "https://github.com/dmitriz",
+    scripts: {
+        start: 'node index.js',
+        dev: "open http://localhost:8080/ && webpack-dev-server",
+        test: "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Dmitri Zaitsev <dmitri14@gmail.com> (https://github.com/dmitriz)",
+    "license": "MIT"
 }
