@@ -39,6 +39,15 @@ proxy = http://proxy.maths.tcd.ie:80
 	trustExitCode = true
 [alias]
 	ac = !git add -A && git commit
+	branches = !legit branches
+	graft = !legit graft
+	harvest = !legit harvest
+	publish = !legit publish
+	unpublish = !legit unpublish
+	sprout = !legit sprout
+	sync = !legit sync
+	switch = !legit switch
+	resync = !legit resync
 [push]
 	default = simple
 [branch]

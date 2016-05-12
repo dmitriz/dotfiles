@@ -11,7 +11,7 @@ r () {
    iron_worker upload $1
    iron_worker queue $1
 }
-
+export -f r
 # Shorcut to start new project
 newp () {
 	mkdir $1
@@ -26,7 +26,6 @@ alias lisa="ls -lisa"
 alias l="ls -G"
 alias e="subl"
 
-alias ns="npm start"
 # npm from cache
 alias npmo="npm --cache-min 999999 -d "
 #alias npml="npm --registry http://127.0.0.1:5080 "
@@ -35,5 +34,5 @@ alias nio="npmo i"
 alias npml="npm --registry http://localhost:8080 -d "
 alias nl="npm ls --depth=0"
 alias nr="npm run"
-
-alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+alias ns="npm start"
+alias nt="npm test"
